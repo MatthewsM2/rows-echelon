@@ -1,0 +1,27 @@
+.ro-no{
+    width: 70px;
+}
+.ro-no-container{
+    display: flex;
+    justify-content: center;
+}
+.alert-script-cont{
+    display: flex;
+    justify-content: center;
+}
+#alert-script{
+    display: block;
+    color: brown;
+}
+h1,h3,.ro-no{
+    text-align: center;
+    align-self: center;
+}
+.row{
+    display: flex;
+}
+
+div{
+    margin-top: 2vh;
+
+}
