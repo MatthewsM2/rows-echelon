@@ -1,9 +1,24 @@
+  @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+*{
+    font-family: 'Cutive Mono', monospace;
+}
 .ro-no{
     width: 70px;
 }
 .ro-no-container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.indiv{
+display: flex;
+justify-content: center;
+}
+.genBtn{
+    text-align: center;
+    width: fit-content;
 }
 .alert-script-cont{
     display: flex;
@@ -23,5 +38,12 @@ h1,h3,.ro-no{
 
 div{
     margin-top: 2vh;
-
+}
+.both-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 3rem 0 3rem;
+}
+#output-container{
+    background-color: aquamarine;
 }

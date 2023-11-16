@@ -1,8 +1,10 @@
 let row = document.getElementById("row-no");
 let col = document.getElementById("col-no");
 let matrixContainer = document.getElementById("matrix-container");
+let outputContainer=document.getElementById("output-container");
 
 function generate() {
+  clearMatrix();
   var rowVal = row.value;
   var colVal = col.value;
   if (rowVal > 0 && colVal > 0) {
@@ -31,9 +33,42 @@ function generate() {
   }
 }
 
+function genOutput(matrix) {
+  var rowVal = matrix.length;
+  var colVal = matrix[0].length;
+  var outputContainer = document.getElementById("output-container");
+
+  for (let i = 0; i < rowVal; i++) {
+    outputContainer.appendChild(
+      Object.assign(document.createElement("div"), {
+        className: "out",
+        id: "out" + i,
+      })
+    );
+
+    for (let j = 0; j < colVal; j++) {
+      var container = document.getElementById("out" + i);
+      container.appendChild(
+        Object.assign(document.createElement("input"), {
+          type: "number",
+          value: matrix[i][j],
+        })
+      );
+    }
+  }
+}
+
+
 function clearMatrix() {
   while (matrixContainer.firstChild) {
     matrixContainer.removeChild(matrixContainer.firstChild);
+    // outputContainer.removeChild(matrixContainer.firstChild);
+  }
+  clearOutMatrix();
+}
+function clearOutMatrix(){
+  while (outputContainer.firstChild) {
+    outputContainer.removeChild(outputContainer.firstChild); // Fixed this line
   }
 }
 
@@ -92,6 +127,7 @@ function zeroElements(matrix){
   }
   }
   console.log(matrix);
+  genOutput(matrix);
 }
 // function zeroElements(matrix) {
 //   for (let i = 0; i < matrix.length; i++) {
